@@ -1,11 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expertflex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expertflex | Telegram</title>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -16,96 +15,135 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1174554530864257');
+fbq('init', '889987396740516');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1174554530864257&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=889987396740516&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-      <style> 
-   body 
-{
-          background-color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            font-family: arial;
-        }
-        .container {
-            background-color: #ddd;
-            backdrop-filter: blur(15px);
-            padding: 20px;
-            border: 1px solid rgb(151, 150, 150);
-            border-radius: 10px;
-            box-shadow: 0 0 50px transparent;
-            max-width: 400px;
-            width: 90%;
-        }
-        h2 {
-            text-transform: uppercase;
-            color: #000;
-        }
-        p {
-            font-size: 1.2em;
-            margin: 10px 0 20px;
-            color: #000;
-            
 
-        }
-        img {
-            width: 200px;
-            box-shadow: 0 0 10px grey;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 10px;
-         
-
-        }
-        .button {
-          background:#0088cc;
-            display: inline-block;
-            padding: 15px 40px;
-           
-            color: white;
-            text-decoration: none;
-            border-radius: 59px;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        
-    a{
-    text-decoration: none;
-    color: #0088cc;
-   }
-
-    </style>
+<style>
+body{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
+}
+.container{
+    background:#ffffff;
+    width:90%;
+    max-width:420px;
+    padding:26px 22px;
+    border-radius:12px;
+    border:1px solid #e6e6e6;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    text-align:center;
+}
+h2{
+    margin:0 0 10px;
+    font-size:22px;
+    color:#111;
+}
+p{
+    font-size:15px;
+    color:#444;
+    margin:10px 0 14px;
+    line-height:1.6;
+}
+.notice{
+    font-size:14px;
+    color:#ff9800;
+    margin:10px 0 18px;
+}
+.button{
+    display:block;
+    width:100%;
+    padding:14px;
+    border-radius:8px;
+    background:#dcdcdc;
+    color:#777;
+    font-size:16px;
+    font-weight:bold;
+    border:none;
+    cursor:not-allowed;
+}
+.button.active{
+    background:#0088cc;
+    color:#fff;
+    cursor:pointer;
+}
+img{
+    width:180px;
+    border-radius:10px;
+    margin:18px 0;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.footer{
+    font-size:13px;
+    color:#666;
+}
+.footer a{
+    color:#0088cc;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
-   <div class="container">
-         <h2>Welcome to our official Telegram channel</h2>
-        <p>Be part of our fast-growing Telegram family — free updates and valuable content.</p>
-        <a class="button" href="https://telegram.me/+HM2Ep57A8Io1ZGI1">Join Telegram Now</a><br>
-        <img src="images.jpg">      
-        <p>Ads Setup By <a href="https://telegram.me/+s86JNtEeB-JkMTE1"> @AVION</a></p>     
-    </div>
+<div class="container">
+    <h2>Welcome to our official Telegram channel</h2>
+
+    <p>
+        Be part of our fast-growing Telegram family —  
+        free updates and valuable content.
+    </p>
+
+    <!-- ✅ NOTICE ONLY -->
+    <p class="notice">
+        This channel is only for users genuinely interested in content.
+    </p>
+
+    <!-- ✅ BUTTON WITH 5s DELAY -->
+    <button id="joinBtn" class="button">
+        Please wait 3s
+    </button>
+
+    <img src="images.jpg" alt="Telegram Community">
+
+    <p class="footer">
+        Ads Setup By  
+        <a href="https://telegram.me/+G03tQQx4RJU4ZTI1"> @AIVON</a>
+    </p>
+</div>
+
+<script>
+const btn = document.getElementById("joinBtn");
+let time = 3;
+
+const countdown = setInterval(() => {
+    time--;
+    btn.innerText = "Please wait" + time + "s";
+
+    if (time <= 0) {
+        clearInterval(countdown);
+        btn.classList.add("active");
+        btn.innerText = "Join Telegram Now";
+    }
+}, 1000);
+
+btn.addEventListener("click", () => {
+    if (btn.classList.contains("active")) {
+        window.location.href = "https://telegram.me/+mm2ujn7pbhY4MjZl";
+    }
+});
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
